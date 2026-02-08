@@ -1,0 +1,108 @@
+:root {
+  --pink: #ff1493; /* For buttons and signature */
+  --rose: #ff8fa3;
+  --text: #FFD700; /* Yellow letters */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Background image */
+  background-image: url("bg.jpg");
+  background-size: contain; 
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  font-family: Arial, sans-serif; /* Use Arial font */
+  color: var(--text);
+  overflow: hidden;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05); /* almost transparent */
+  width: 85%;
+  max-width: 520px;
+  padding: 28px 22px;
+  border-radius: 24px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  color: var(--pink);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+  font-family: Arial, sans-serif;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 18px;
+  font-family: Arial, sans-serif;
+}
+
+.letter {
+  background: transparent;       
+  border: none;                  
+  padding: 0;                    
+  line-height: 1.7;
+  font-size: 1.2rem;
+  font-family: Arial, sans-serif;
+  font-weight: normal;           
+  color: var(--text);             
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6); /* subtle black shadow for readability */
+}
+
+.letter p { margin: 0 0 12px; }
+.signature { margin-top: 14px; font-family: Arial, sans-serif; font-weight: normal; color: var(--pink); text-shadow: 1px 1px 2px rgba(0,0,0,0.6); }
+
+button {
+  margin-top: 16px;
+  margin-right: 6px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--pink), var(--rose));
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(255,77,109,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(255,77,109,0.5); }
+button:active { transform: scale(0.97); }
+
+.heart {
+  position: fixed;
+  bottom: -40px;
+  font-size: 22px;
+  animation: floatUp linear forwards;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+@keyframes floatUp {
+  to { transform: translateY(-110vh) scale(1.8); opacity: 0; }
+}
+
+@media (max-width: 480px) {
+  .card { width: 95%; padding: 20px; }
+  h1 { font-size: 1.5rem; }
+  .letter { font-size: 1.05rem; }
+}
